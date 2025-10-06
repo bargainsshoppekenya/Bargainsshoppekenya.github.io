@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from businessclaud.co.ke/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Oct 2025 18:51:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="template/assets/images/logo.png"/>
+    <meta name="description" content="Bargainsshoppe - Africa’s leading marketplace for heavy machinery, construction equipment, vehicles, electronics, fashion, and millions of other products.">
+    <meta name="keywords" content="Bargainsshoppe, Africa marketplace, heavy machinery, construction equipment, agricultural machinery, vehicles, electronics, fashion">
+    <meta name="author" content="Bargainsshoppe">
+    <title>Bargainsshoppe | Africa’s Marketplace</title>
+    <link rel="stylesheet" href="../stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .fashion_taital {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .buy_bt p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #214b9f;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .cta-button:hover {
+            background-color: #eb1859;
+        }
+        /* Search Bar Styling */
+        .search-bar {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .search-bar form {
+            display: flex;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            outline: none;
+        }
+        .search-bar button {
+            background-color: #214b9f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-weight: bold;
+        }
+        .search-bar button:hover {
+            background-color: #eb1859;
+        }
+        /* Slider Background Images */
+        .carousel-item {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer ul {
+  list-style: none !important; /* remove bullets */
+  padding-left: 0 !important;  /* remove left padding */
+  margin: 0 !important;
+}
+
+footer li {
+  display: inline-block !important; /* horizontal layout */
+  margin: 0 8px !important;
+  color: #999999 !important; /* lighter text color */
+  font-weight: normal !important;
+}
+
+footer li:not(:last-child)::after {
+  content: "|";
+  color: #ccc !important;
+  margin-left: 8px !important;
+}
+
+footer a {
+  color: #999999 !important; /* less conspicuous links */
+  text-decoration: none !important;
+  font-weight: normal !important;
+  transition: color 0.3s ease !important;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #214b9f !important; /* subtle blue on hover */
+  text-decoration: underline !important;
+}
+
+footer {
+  background-color: #f9f9f9 !important;
+  color: #777777 !important; /* softer text color */
+  font-size: 0.85rem !important;
+  padding: 15px 20px !important;
+  text-align: center !important;
+  border-top: 1px solid #ddd !important;
+  font-family: Arial, sans-serif !important;
+  user-select: none;
+  line-height: 1.4 !important;
+}
+.search-bar {
+  position: relative; /* for dropdown positioning */
+  max-width: 800px;
+  margin: 20px auto;
+  z-index: 1000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar form {
+  display: flex;
+  border-radius: 30px;
+  overflow: visible; /* allow dropdown outside */
+  border: 1px solid #ccc;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar form:focus-within {
+  box-shadow: 0 0 8px 2px #214b9f;
+  border-color: #214b9f;
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+  border-radius: 30px 0 0 30px;
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar input[type="text"]::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.search-bar button {
+  background-color: #214b9f;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  font-weight: 700;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.search-bar button:hover,
+.search-bar button:focus {
+  background-color: #eb1859;
+  outline: none;
+}
+
+ul.dropdown-menu.drop.list-group {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  width: 100% !important;
+  margin: 4px 0 0 0 !important;
+  padding: 0 !important;
+  display: none;
+  background: white !important;
+  border: 1px solid #ccc !important;
+  border-radius: 0 0 8px 8px !important;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  z-index: 1050 !important;
+  list-style: none !important;
+  user-select: none;
+}
+
+ul.dropdown-menu.drop.list-group li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #444;
+  transition: background-color 0.2s ease;
+}
+
+ul.dropdown-menu.drop.list-group li:hover,
+ul.dropdown-menu.drop.list-group li:focus {
+  background-color: #f8f9fa;
+  color: #214b9f;
+  outline: none;
+}
+
+/* Optional: scrollbar styling for dropdown */
+ul.dropdown-menu.drop.list-group::-webkit-scrollbar {
+  width: 6px;
+}
+
+ul.dropdown-menu.drop.list-group::-webkit-scrollbar-thumb {
+  background-color: rgba(33, 75, 159, 0.5);
+  border-radius: 3px;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="text-center p-3 bg-light">
+        <h1 class="fashion_taital">
+            <span style="color:#214b9f;">Bargains</span> 
+            <span style="color:#eb1859;">Shoppe</span>
+        </h1>
+        <p>
+            Africa’s marketplace for <strong>heavy machinery</strong>, 
+            <strong>Tents & Car shades, construction equipment</strong>, vehicles, electronics, fashion & more.
+            Millions of products, one platform call 0100185501, 0202307007, 0518009090.
+        </p>
+    </header>
+<!-- Search Bar -->
+<div class="search-bar">
+  <form action="https://businessclaud.co.ke/search" method="get" id="search_form">
+    <input
+      type="text"
+      name="search"
+      id="gsearchsimple"
+      placeholder="Search it here, machines, tents, anything..."
+      autocomplete="off"
+      required
+    />
+    <button type="submit">Search</button>
+    <input name="post_type" value="product" type="hidden" />
+    <ul class="dropdown-menu drop list-group"></ul>
+  </form>
+</div>
+
+
+    <!-- Image Slider -->
+    <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" style="background-image: url('client/public/template/slides/slider1.jpg');">
+                <div class="overlay">
+                    <div>
+                        <h2>Find High Quality Tents</h2>
+                        <p>Exhibition Tents, Medical, 50 Seater, 100 seater, 150 seater, Camping tent, gazebo.</p>
+                        <a href="categories/tents.html" class="cta-button">Browse Tents</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item" style="background-image: url('client/public/template/slides/slider2.jpg');">
+                <div class="overlay">
+                    <div>
+                        <h2>Buy & Sell Across Africa</h2>
+                        <p>Vehicles, electronics, fashion, and millions of other products.</p>
+                        <a href="categories/car-shades.html" class="cta-button">Explore Categories</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item" style="background-image: url('client/public/template/slides/slider3.jpg');">
+                <div class="overlay">
+                    <div>
+                        <h2>Find Heavy Machinery</h2>
+                        <p>Excavators, loaders, cranes, and more from verified African suppliers..</p>
+                        <a href="categories/backhoe-loader.html" class="cta-button">Browse Machinery</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center p-4 bg-light mt-4">
+        <p>&copy; 2025 Bargainsshoppe - Connecting Africa’s Businesses</p>
+    </footer>
+
+    <script src="../code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="../cdn.jsdelivr.net/npm/bootstrap%404.5.2/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Scripts -->
+ <script src="template/assets/js/popper.min.js"></script>
+  <script src="template/headhome/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+
+  <script>
+$(document).ready(function() {
+  // AJAX autocomplete on typing
+  $("#gsearchsimple").on("input", function() {
+    const query = $(this).val().trim();
+
+    if (query.length === 0) {
+      $(".list-group").hide().empty();
+      return;
+    }
+
+    $.ajax({
+      url: "https://businessclaud.co.ke/search2",
+      method: "POST",
+      data: { query: query },
+      success: function(data) {
+        $(".list-group").html(data).show();
+      },
+      error: function() {
+        $(".list-group").hide().empty();
+      }
+    });
+  });
+
+  // Click suggestion => fill input and redirect to search page
+  $(document).on("click", ".list-group li", function() {
+    const selectedText = $(this).text().trim();
+    $("#gsearchsimple").val(selectedText);
+    $(".list-group").hide();
+
+    const url = "https://businessclaud.co.ke/search?search=" + encodeURIComponent(selectedText) + "&post_type=product";
+    console.log("Redirecting to:", url);
+    window.location = url;
+  });
+
+  // Submit form normally - no AJAX
+  $("#search_form").on("submit", function(e) {
+    const query = $("#gsearchsimple").val().trim();
+    if (query.length === 0) {
+      e.preventDefault(); // prevent empty searches
+      return;
+    }
+    // form submits naturally with GET, so URL will be:
+    // https://businessclaud.co.ke/search?search=your_query&post_type=product
+  });
+
+  // Hide dropdown when clicking outside
+  $(document).click(function(e) {
+    if (!$(e.target).closest('.search-bar').length) {
+      $(".list-group").hide();
+    }
+  });
+});
+</script>
+<script>
+    $(document).ready(function(){
+        // Show hide popover
+        $(".drop").click(function(){
+            $(this).find(".dropdown-menu").slideToggle("fast");
+        });
+    });
+    $(document).on("click", function(event){
+        var $trigger = $(".drop");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $(".dropdown-menu").slideUp("fast");
+        }            
+    });
+	
+	$(window).scroll(function() {    // this will work when your window scrolled.
+		var height = $(window).scrollTop();  //getting the scrolling height of window
+		if(height  > 100) {
+			$(".header").css({"position": "fixed"});
+		} else{
+			$(".header").css({"position": "relative"});
+		}
+	});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-201286773-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-201286773-1');
+</script>
+<!--Start of Tawk.to Script-->
+
+<script>
+    $(document).ready(function () {
+  let ajaxCall = null; // to hold current ajax request
+
+  $("#gsearchsimple").on("input", function () {
+    const query = $(this).val().trim();
+
+    if (ajaxCall) {
+      ajaxCall.abort(); // cancel previous ajax if any
+    }
+
+    if (query.length === 0) {
+      $(".list-group").hide().empty();
+      return;
+    }
+
+    // Debounce, you can add debounce here if needed (setTimeout/clearTimeout)
+    // But basic example:
+
+    ajaxCall = $.ajax({
+      url: "https://businessclaud.co.ke/search2",
+      method: "POST",
+      data: { query: query },
+      success: function (data) {
+        $(".list-group").html(data).show();
+      },
+      error: function () {
+        $(".list-group").hide().empty();
+      }
+    });
+  });
+
+  // Hide suggestions when clicking outside
+  $(document).click(function (e) {
+    if (!$(e.target).closest('.search-bar').length) {
+      $(".list-group").hide();
+    }
+  });
+
+  // Clicking a suggestion fills input and hides dropdown
+  $(document).on("click", ".list-group li", function () {
+    const text = $(this).text();
+    $("#gsearchsimple").val(text);
+    $(".list-group").hide();
+    // Optionally trigger your search or redirect here
+  });
+});
+
+  </script>
+</body>
+
+<!-- Mirrored from businessclaud.co.ke/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Oct 2025 18:51:37 GMT -->
+</html>
+    <body>
+    <script>
+      fbq('track', 'ViewContent');
+    </script>
+
+    <div class="wrapper">
+   
+        
+        <div class="col-md-12">
+            <span class="text-bold"></span>
+        </div>
+
+            </div> <!-- wrapper end -->
+                <div id="top-banner-and-menu">
+                <div class="container">
+                <!--START : Remove to avoid repetion of navigation bars-->
+                    <div class="col-xs-12 col-sm-4 col-md-3 sidemenu-holder">
+                        <!-- ================================== TOP NAVIGATION ================================== -->
+
+                        <!-- ================================== TOP NAVIGATION : END ================================== -->
+                    </div><!-- /.sidemenu-holder -->				<!--END : Remove to avoid repetion of navigation bars-->
+ 					                </div><!-- /.container -->
+            </div><!-- /#top-banner-and-menu -->
+           				<div class="container"></div><footer><div class="footer-bottom"><div class="container"><div class="row"><div class="col-xs-12 col-lg-3 col-md-6 col-sm-6"><div class="klbfooterwidget widget_nav_menu"><div class="module-heading"><h4 class="module-title">Help and Support</h4></div><div class="menu-help-and-support-container"><ul class="menu"id="menu-help-and-support"><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-258"id="menu-item-258"><a href="terms.html">Term of Use</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-259"id="menu-item-259"><a href="terms.html">Search Terms</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-260"id="menu-item-260"><a href="stores.html">PickUp Points</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-261"id="menu-item-261"><a href="terms.html">Orders and Returns</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-262"id="menu-item-262"><a href="delivery.html">Deliveries</a></li></ul></div></div></div><div class="col-xs-12 col-lg-3 col-md-6 col-sm-6"><div class="klbfooterwidget widget_nav_menu"><div class="module-heading"><h4 class="module-title">Customer Service</h4></div><div class="menu-customer-service-container"><ul class="menu"id="menu-customer-service"><li class="menu-item menu-item-object-page menu-item-type-post_type menu-item-263"id="menu-item-263"><a href="client/users/login.html">My account</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-264"id="menu-item-264"><a href="admin/index.html">Order History</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-265"id="menu-item-265"><a href="faqs.html">FAQ</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-266"id="menu-item-266"><a href="about.html">Specials</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-267"id="menu-item-267"><a href="faqs.html">Help Center</a></li></ul></div></div></div><div class="col-xs-12 col-lg-3 col-md-6 col-sm-6"><div class="klbfooterwidget widget_nav_menu"><div class="module-heading"><h4 class="module-title">Corporation</h4></div><div class="menu-corporation-container"><ul class="menu"id="menu-corporation"><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-268"id="menu-item-268"><a href="about.html">About Us</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-269"id="menu-item-269"><a href="contact.html">Customer Service</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-270"id="menu-item-270"><a href="about/index.html">Company</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-271"id="menu-item-271"><a href="#">Investor Relations</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-272"id="menu-item-272"><a href="#">Advanced Search</a></li></ul></div></div></div><div class="col-xs-12 col-lg-3 col-md-6 col-sm-6"><div class="klbfooterwidget widget_nav_menu"><div class="module-heading"><h4 class="module-title">Why Choose Us</h4></div><div class="menu-why-choose-us-container"><ul class="menu"id="menu-why-choose-us"><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-273"id="menu-item-273"><a href="delivery.html">Shopping Guide</a></li><li class="menu-item menu-item-object-page menu-item-type-post_type menu-item-669"id="menu-item-669"><a href="faqs.html">Blog</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-275"id="menu-item-275"><a href="about.html">Bargainsshoppe</a></li><li class="menu-item menu-item-object-custom menu-item-type-custom menu-item-276"id="menu-item-276"></li><li class="menu-item menu-item-object-page menu-item-type-post_type menu-item-670"id="menu-item-670"><a href="contact.html">Contact Us</a></li></ul></div></div></div></div></div></div><div class="copyright-bar white-bg"><div class="container"><div class="col-xs-12 col-md-12 col-lg-7 col-sm-7 del-info">We have our very own fleet of delivery vans. Your order will be packed with care at our warehouse and delivered right to your door by our friendly Bargainsshoppe team.</div><div class="col-xs-12 col-md-12 col-lg-5 col-sm-5 no-padding"><a href="charges/index.html"><div class="clearfix payment-methods"><ul><li><img alt="business cloud"src="template/bclaud/banner/1.png"tooltip="bargains shoppe payment"></li><li><img alt="bargains shoppe payment-image"src="template/bclaud/banner/2.png"tooltip="bargains shoppe payment-image"></li><li><img alt="bargains shoppe payment-image"src="template/bclaud/banner/3.png"tooltip="bargains shoppe payment-image"></li><li><img alt="bargains shoppe payment-image"alt="bargains shoppe payment-image"src="template/bclaud/banner/4.png"></li></ul></div></div></div></div><div class="footer-fix-nav shadow"><div class="row mx-0"><div class="col col-xs-3"><a href="Businessclaud.html"title="Bargainsshoppe-ecommerce"><i class="fa fa-home"></i></a></div><div class="col col-xs-3"><a href="Businessclaud.html"><i class="fa fa-th-large"></i></a></div><div class="col col-xs-3"><a href="Businessclaud.html"><i class="fa fa-shopping-cart"></i> <span class="cartcount">3</span></a></div><div class="col col-xs-3"><a href="Businessclaud.com/index.html"><i class="fa fa-user"></i></a></div></div></div></footer>
+<style>
+.popup {
+  background-color: #0f72e5;
+  width: 80%;
+  padding: 30px 40px;
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  display: none;
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup button {
+  display: block;
+  margin: 0 0 20px auto;
+  background-color: transparent;
+  font-size: 30px;
+  color: #c5c5c5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup p {
+  font-size: 14px;
+  text-align: justify;
+  margin: 20px 0;
+  line-height: 25px;
+}
+
+.closebtn {
+  display: block;
+  width: 150px;
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #eb1859;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+</style>
+<div id="popup" class="popup">
+  <button id="close">&times;</button>
+  <h2 style="color:#fff;">Welcome</h2>
+  <p style="color:#fff;">
+    Welcome to Bargainsshoppe Kenya. We deal with Quality & Original Products. Delivery in just 2-3hrs and 24hr countrywide
+  </p>
+  <a href="#" class="closebtn">Got it, Thanks</a>
+</div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("popup") !== "true") {
+    var popup = document.querySelector(".popup");
+    if (popup) {
+      popup.style.display = "block";
+    }
+  }
+  localStorage.setItem("popup", "true");
+});
+
+document.addEventListener("click", function (event) {
+  var closeButton = document.querySelector("#close");
+  var closeBtnLink = document.querySelector(".closebtn");
+  var popup = document.querySelector(".popup");
+
+  if (event.target === closeButton || event.target === closeBtnLink) {
+    event.preventDefault();
+    if (popup) {
+      popup.style.display = "none";
+    }
+  }
+});
+</script>
+        			 <script src="template/assets/js/jquery-1.12.4.min.js"></script>
+		 		<script src="template/assets/js/popper.min.js"></script>
+		 		<script src="template/assets/js/JsLocalSearch.js"></script>        	          <!--Start of Tawk.to Script-->
+        	          
+        	          
+<style id="klbmobile-inline-css">@media(max-width:768px) and (min-width:320px){ .vc_row .klb_xs_vc_custom_1577174960137{padding-right: 15px !important;}} 
+@media(max-width:768px) and (min-width:320px){ .vc_row .klb_xs_vc_custom_1577174972039{padding-left: 15px !important;}} 
+@media(max-width:768px) and (min-width:320px){ .vc_row .klb_xs_vc_custom_1578035107038{margin-top: 30px !important;}} 
+@media(max-width:768px) and (min-width:320px){ .vc_row .klb_xs_vc_custom_1578035115031{margin-top: 30px !important;}} 
+@media(max-width:768px) and (min-width:320px){ .vc_row .klb_xs_vc_custom_1578034996922{margin-top: 25px !important;}} 
+@media(max-width:768px) and (min-width:320px){ .vc_row .klb_xs_vc_custom_1578033829235{margin-top: 30px !important;}}</style>
+<script>(function (){
+var c=document.body.className;
+c=c.replace(/woocommerce-no-js/, 'woocommerce-js');
+document.body.className=c;
+})();</script>
+<script id="contact-form-7-js-extra">var wpcf7=[];</script>
+<script id="woo-variation-swatches-js-extra">var woo_variation_swatches_options={"is_product_page":"","show_variation_label":"1","variation_label_separator":":","wvs_nonce":"a1d5a8fece"};</script>
+<script src="template/bclaud/4dr3y.js.download"></script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){
+window.mc4wp=window.mc4wp||{
+listeners: [],
+forms: {
+on: function(evt, cb){
+window.mc4wp.listeners.push({
+event:evt,
+callback: cb
+}
+);
+}}
+}})();</script>
+<script>(function(){function maybePrefixUrlField(){
+if(this.value.trim()!==''&&this.value.indexOf('http')!==0){
+this.value="http://" + this.value;
+}}
+var urlFields=document.querySelectorAll('.mc4wp-form input[type="url"]');
+if(urlFields){
+for (var j=0; j < urlFields.length; j++){
+urlFields[j].addEventListener('blur', maybePrefixUrlField);
+}}
+})();</script>
+<script src="template/bclaud/4dr3y.js(1).html"></script>
+<script src="template/bclaud/4dr3y.js(2).html"></script>
+<script id="wp-i18n-js-after">wp.i18n.setLocaleData({ 'text direction\u0004ltr': [ 'ltr' ] });</script>
+<script src="template/bclaud/4dr3y.js(3).html"></script>
+<script id="lodash-js-after">window.lodash=_.noConflict();</script>
+<script src="template/bclaud/4dr3y.js(4).html"></script>
+<script id="wp-api-fetch-js-translations">(function(domain, translations){
+var localeData=translations.locale_data[ domain ]||translations.locale_data.messages;
+localeData[""].domain=domain;
+wp.i18n.setLocaleData(localeData, domain);
+})("default", { "locale_data": { "messages": { "": {}} }});</script>
+<script src="template/bclaud/4dr3y.js(5).html"></script>
+<script defer="" src="template/bclaud/4dr3y.js(6).html"></script>
+<script defer="" src="template/bclaud/4dr3y.js(7).html" id="tinvwl-js"></script>
+<script defer="" src="template/bclaud/4dr3y.js(8).html"></script>
+<script>document.addEventListener('DOMContentLoaded',function(){function wpfcgl(){var wgh=document.querySelector('noscript#wpfc-google-fonts').innerText, wgha=wgh.match(/<link[^\>]+>/gi);for(i=0;i<wgha.length;i++){var wrpr=document.createElement('div');wrpr.innerHTML=wgha[i];document.body.appendChild(wrpr.firstChild);}}wpfcgl();});</script>
+
+
+<script>
+$(document).ready(function(){
+ $('#gsearchsimple').keyup(function(){
+  var query = $('#gsearchsimple').val();
+  $('#detail').html('');
+  $('.list-group').css('display', 'block');
+ if(query.length == 1)
+  {
+   $.ajax({
+    url:"https://businessclaud.co.ke/search2",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+   if(query.length == 4)
+  {
+   $.ajax({
+    url:"https://businessclaud.co.ke/search2",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 9)
+  {
+   $.ajax({
+    url:"https://businessclaud.co.ke/search2",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+    if(query.length == 14)
+  {
+   $.ajax({
+    url:"https://businessclaud.co.ke/search2",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+    if(query.length == 20)
+  {
+   $.ajax({
+    url:"https://businessclaud.co.ke/search2",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+     if(query.length == 40)
+  {
+   $.ajax({
+    url:"https://businessclaud.co.ke/search",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+     $('.list-group').html(data);
+    }
+   })
+  }
+  if(query.length == 0)
+  {
+   $('.list-group').css('display', 'none');
+  }
+ });
+
+ $('#localSearchSimple').jsLocalSearch({
+  action:"Show",
+  html_search:true,
+  mark_text:"marktext"
+ });
+
+ $(document).on('click', '.gsearch', function(){
+  var product_name = $(this).text();
+  $('#gsearchsimple').val(product_name);
+  $('.list-group').css('display', 'none');
+  $.ajax({
+   url:"https://businessclaud.co.ke/search",
+   method:"POST",
+   data:{product_name:product_name},
+   success:function(data)
+   {
+   $('top-banner-and-menu').css('display', 'none');
+                    window.location = "https://businessclaud.co.ke/search?search="+product_name+"&post_type=product";
+    $('#detail').html(data);
+   }
+  })
+ });
+});
+</script>
+<script>
+    $(document).ready(function(){
+        // Show hide popover
+        $(".drop").click(function(){
+            $(this).find(".dropdown-menu").slideToggle("fast");
+        });
+    });
+    $(document).on("click", function(event){
+        var $trigger = $(".drop");
+        if($trigger !== event.target && !$trigger.has(event.target).length){
+            $(".dropdown-menu").slideUp("fast");
+        }            
+    });
+	
+	$(window).scroll(function() {    // this will work when your window scrolled.
+		var height = $(window).scrollTop();  //getting the scrolling height of window
+		if(height  > 100) {
+			$(".header").css({"position": "fixed"});
+		} else{
+			$(".header").css({"position": "relative"});
+		}
+	});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-201286773-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-201286773-1');
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/62f371a837898912e96236b5/1ga3f7vi5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<!--End of Tawk.to Script-->
