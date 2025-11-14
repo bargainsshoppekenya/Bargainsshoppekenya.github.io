@@ -1,0 +1,1315 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bargainsshoppe - Kenya's Online Marketplace</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top Bar -->
+            <div class="flex items-center justify-between py-2 text-sm text-gray-600 border-b">
+                <div class="flex items-center space-x-4">
+                    <span>Free delivery on orders over KSh 2,000</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span>KSH</span>
+                    <span>+254 100 185501</span>
+                    <span>Nairobi: +254 20 2307007</span>
+                    <span>Mombasa: +254 518 009090</span>
+                </div>
+            </div>
+
+            <!-- Main Header -->
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <button id="menuToggle" class="lg:hidden p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-green-600 ml-2">Bargainsshoppe</h1>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search products..."
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        />
+                        <i data-lucide="search" class="absolute right-3 top-2.5 h-5 w-5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Cart -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartButton" class="relative p-2">
+                        <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">
+                            0
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="desktopNav" class="hidden lg:flex space-x-8 py-2">
+                <!-- Categories will be populated by JavaScript -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden bg-white shadow-lg hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <!-- Categories will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- WhatsApp Contact Banner -->
+    <div class="bg-green-600 text-white py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center space-x-8">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="message-circle" class="h-5 w-5"></i>
+                <span>WhatsApp: +254 774 755356</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i data-lucide="message-circle" class="h-5 w-5"></i>
+                <span>WhatsApp: +254 785 151815</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-500 to-green-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">Welcome to Bargainsshoppe.co.ke</h2>
+            <p class="text-xl mb-8">Over 500,000 products at unbeatable prices</p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <div class="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-lg">
+                    <i data-lucide="truck" class="h-5 w-5"></i>
+                    <span>Free Delivery</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-lg">
+                    <i data-lucide="shield" class="h-5 w-5"></i>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-lg">
+                    <i data-lucide="rotate-ccw" class="h-5 w-5"></i>
+                    <span>Easy Returns</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Carousel -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold mb-8">Featured Products</h3>
+            <div id="featuredProducts" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                <!-- Featured products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="categoryFilter" class="flex flex-wrap gap-2">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Bargainsshoppe</h3>
+                    <p class="text-gray-300 text-sm">
+                        Kenya's leading online marketplace with over 500,000 products at unbeatable prices.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-md font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Help Center</li>
+                        <li>Contact Us</li>
+                        <li>Return Policy</li>
+                        <li>Shipping Info</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-md font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="h-4 w-4 mr-2"></i>
+                            +254 100 185501
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="h-4 w-4 mr-2"></i>
+                            Nairobi: +254 20 2307007
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="h-4 w-4 mr-2"></i>
+                            Mombasa: +254 518 009090
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="message-circle" class="h-4 w-4 mr-2"></i>
+                            WhatsApp: +254 774 755356
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="message-circle" class="h-4 w-4 mr-2"></i>
+                            WhatsApp: +254 785 151815
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-md font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>About Us</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                        <li>Store Locations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
+                <p>&copy; 2025 Bargainsshoppe.co.ke. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // State management
+        let cart = [];
+        let isMenuOpen = false;
+        let searchQuery = '';
+        let selectedCategory = 'all';
+        let currentImageIndex = {};
+
+        // Categories
+        const categories = [
+            'all', 'electronics', 'fashion', 'home', 'beauty', 'sports', 'automotive', 'books', 'toys', 'health'
+        ];
+
+        // Mock product data
+        const mockProducts = [
+            {
+                id: 1,
+                name: 'iPhone 15 Pro Max 256GB',
+                price: 129999,
+                originalPrice: 139999,
+                category: 'electronics',
+                image: 'https://placehold.co/300x300/4F46E5/white?text=iPhone+15+Pro',
+                rating: 4.8,
+                reviews: 124,
+                discount: 7
+            },
+            {
+                id: 2,
+                name: 'Samsung Galaxy S24 Ultra',
+                price: 119999,
+                originalPrice: 129999,
+                category: 'electronics',
+                image: 'https://placehold.co/300x300/7C3AED/white?text=Galaxy+S24',
+                rating: 4.7,
+                reviews: 89,
+                discount: 8
+            },
+            {
+                id: 3,
+                name: 'Nike Air Max 270',
+                price: 8999,
+                originalPrice: 12999,
+                category: 'fashion',
+                image: 'https://placehold.co/300x300/EF4444/white?text=Nike+Air+Max',
+                rating: 4.6,
+                reviews: 256,
+                discount: 31
+            },
+            {
+                id: 4,
+                name: 'Levi\'s 501 Original Jeans',
+                price: 4599,
+                originalPrice: 6999,
+                category: 'fashion',
+                image: 'https://placehold.co/300x300/0EA5E9/white?text=Levis+501',
+                rating: 4.5,
+                reviews: 178,
+                discount: 34
+            },
+            {
+                id: 5,
+                name: 'Sony WH-1000XM5 Headphones',
+                price: 44999,
+                originalPrice: 49999,
+                category: 'electronics',
+                image: 'https://placehold.co/300x300/10B981/white?text=Sony+Headphones',
+                rating: 4.9,
+                reviews: 92,
+                discount: 10
+            },
+            {
+                id: 6,
+                name: 'KitchenAid Stand Mixer',
+                price: 24999,
+                originalPrice: 29999,
+                category: 'home',
+                image: 'https://placehold.co/300x300/F59E0B/white?text=KitchenAid',
+                rating: 4.7,
+                reviews: 67,
+                discount: 17
+            },
+            {
+                id: 7,
+                name: 'L\'Oréal Paris Revitalift Cream',
+                price: 1899,
+                originalPrice: 2499,
+                category: 'beauty',
+                image: 'https://placehold.co/300x300/EC4899/white?text=Loreal+Cream',
+                rating: 4.4,
+                reviews: 342,
+                discount: 24
+            },
+            {
+                id: 8,
+                name: 'Adidas Ultraboost 22',
+                price: 12999,
+                originalPrice: 15999,
+                category: 'sports',
+                image: 'https://placehold.co/300x300/8B5CF6/white?text=Adidas+Boost',
+                rating: 4.6,
+                reviews: 156,
+                discount: 19
+            },
+            {
+                id: 9,
+                name: 'Apple Watch Series 9',
+                price: 59999,
+                originalPrice: 64999,
+                category: 'electronics',
+                image: 'https://placehold.co/300x300/6B7280/white?text=Apple+Watch',
+                rating: 4.8,
+                reviews: 203,
+                discount: 8
+            },
+            {
+                id: 10,
+                name: 'Sony PlayStation 5',
+                price: 64999,
+                originalPrice: 69999,
+                category: 'electronics',
+                image: 'https://placehold.co/300x300/3B82F6/white?text=PlayStation+5',
+                rating: 4.9,
+                reviews: 189,
+                discount: 7
+            },
+            {
+                id: 11,
+                name: 'Nike Dri-FIT T-Shirt',
+                price: 2499,
+                originalPrice: 3499,
+                category: 'fashion',
+                image: 'https://placehold.co/300x300/14B8A6/white?text=Nike+T-Shirt',
+                rating: 4.3,
+                reviews: 89,
+                discount: 29
+            },
+            {
+                id: 12,
+                name: 'Dyson V15 Detect Vacuum',
+                price: 89999,
+                originalPrice: 99999,
+                category: 'home',
+                image: 'https://placehold.co/300x300/F97316/white?text=Dyson+V15',
+                rating: 4.7,
+                reviews: 76,
+                discount: 10
+            }
+        ];
+
+        // Generate more mock products
+        function generateMockProducts() {
+            const additionalProducts = [];
+            const productNames = [
+                'Wireless Bluetooth Earbuds', 'Smart LED TV 55"', 'Gaming Laptop RTX 4060', 'Coffee Maker Premium',
+                'Yoga Mat Non-Slip', 'Backpack Waterproof', 'Smart Door Lock', 'Air Fryer Pro', 'Electric Toothbrush',
+                'Pressure Cooker Multi', 'Desk Lamp LED', 'Water Bottle Insulated', 'Sunglasses UV Protection',
+                'Wallet Genuine Leather', 'Running Shorts', 'Winter Jacket', 'Hiking Boots', 'Tent 4-Person',
+                'Camping Chair', 'Fishing Rod Set', 'Tennis Racket', 'Basketball', 'Soccer Ball', 'Volleyball',
+                'Baseball Cap', 'Sneakers Running', 'Dress Formal', 'Skirt Pencil', 'Blouse Silk', 'Tie Silk',
+                'Scarf Wool', 'Gloves Leather', 'Hat Baseball', 'Socks Cotton', 'Underwear Cotton', 'Bra Support',
+                'Swimsuit One-Piece', 'Flip-Flops', 'Sandals Leather', 'Watch Analog', 'Sunglasses Designer',
+                'Makeup Kit', 'Skincare Set', 'Perfume Eau de Parfum', 'Shampoo 500ml', 'Conditioner 500ml',
+                'Body Lotion 250ml', 'Face Cream Day', 'Night Cream', 'Eye Cream', 'Lip Balm', 'Foundation',
+                'Mascara', 'Eyeliner', 'Lipstick', 'Nail Polish', 'Hair Dryer', 'Straightener', 'Curler',
+                'Razor Electric', 'Shaving Cream', 'Deodorant', 'Toothpaste', 'Toothbrush Electric', 'Mouthwash',
+                'Floss', 'Dental Picks', 'Shower Gel', 'Body Wash', 'Bar Soap', 'Shampoo Bar', 'Conditioner Bar',
+                'Hand Soap', 'Hand Cream', 'Body Scrub', 'Body Oil', 'Talcum Powder', 'Baby Powder', 'Diapers Size 1',
+                'Diapers Size 2', 'Diapers Size 3', 'Baby Wipes', 'Baby Shampoo', 'Baby Lotion', 'Baby Oil',
+                'Baby Powder', 'Baby Soap', 'Baby Towel', 'Baby Blanket', 'Baby Clothes Set', 'Baby Shoes',
+                'Baby Hat', 'Baby Gloves', 'Baby Socks', 'Baby Bib', 'Baby Burp Cloth', 'Baby Carrier',
+                'Stroller', 'Car Seat', 'High Chair', 'Playpen', 'Crib', 'Mattress', 'Sheets Cotton', 'Pillow',
+                'Blanket Wool', 'Comforter', 'Duvet Cover', 'Bedspread', 'Curtains', 'Rug Persian', 'Lamp Table',
+                'Lamp Floor', 'Lamp Ceiling', 'Fan Ceiling', 'Fan Table', 'Heater Electric', 'Air Conditioner',
+                'Vacuum Robot', 'Washing Machine', 'Dryer Electric', 'Dishwasher', 'Refrigerator', 'Freezer',
+                'Microwave', 'Oven Electric', 'Stove Gas', 'Coffee Maker', 'Blender', 'Toaster', 'Mixer',
+                'Food Processor', 'Juicer', 'Rice Cooker', 'Slow Cooker', 'Pressure Cooker', 'Crock Pot',
+                'Air Fryer', 'Grill Electric', 'Sous Vide', 'Ice Maker', 'Water Filter', 'Coffee Grinder',
+                'Spice Grinder', 'Meat Grinder', 'Vegetable Chopper', 'Salad Spinner', 'Can Opener',
+                'Bottle Opener', 'Corkscrew', 'Knife Set', 'Cutting Board', 'Pots Set', 'Pans Set',
+                'Baking Sheets', 'Muffin Tin', 'Cake Pan', 'Pie Dish', 'Casserole Dish', 'Slow Cooker',
+                'Rice Cooker', 'Pressure Cooker', 'Slow Cooker', 'Rice Cooker', 'Pressure Cooker'
+            ];
+
+            for (let i = 13; i <= 100; i++) {
+                const randomProduct = productNames[Math.floor(Math.random() * productNames.length)];
+                const randomCategory = categories[Math.floor(Math.random() * (categories.length - 1)) + 1];
+                
+                additionalProducts.push({
+                    id: i,
+                    name: randomProduct,
+                    price: Math.floor(Math.random() * 100000) + 500,
+                    originalPrice: Math.floor(Math.random() * 120000) + 1000,
+                    category: randomCategory,
+                    image: `https://placehold.co/300x300/${Math.floor(Math.random()*16777215).toString(16)}/white?text=Product+${i}`,
+                    rating: parseFloat((Math.random() * 2 + 3).toFixed(1)),
+                    reviews: Math.floor(Math.random() * 500),
+                    discount: Math.floor(Math.random() * 50)
+                });
+            }
+            
+            return [...mockProducts, ...additionalProducts];
+        }
+
+        const allProducts = generateMockProducts();
+
+        // Format currency function
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-KE', {
+                style: 'currency',
+                currency: 'KES',
+                minimumFractionDigits: 2
+            }).format(amount);
+        }
+
+        // Add to cart function
+        function addToCart(product) {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            updateCartDisplay();
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (totalItems > 0) {
+                cartCount.textContent = totalItems;
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+        }
+
+        // Filter products
+        function filterProducts() {
+            return allProducts.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
+                const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+                return matchesSearch && matchesCategory;
+            });
+        }
+
+        // Render products
+        function renderProducts(products) {
+            const container = document.getElementById('productsGrid');
+            container.innerHTML = '';
+            
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow';
+                
+                productDiv.innerHTML = `
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-4">
+                        <h4 class="font-semibold text-sm mb-2 line-clamp-2">${product.name}</h4>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ${[...Array(5)].map((_, i) => `
+                                    <i data-lucide="star" class="h-4 w-4 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-gray-300'}"></i>
+                                `).join('')}
+                            </div>
+                            <span class="text-xs text-gray-600 ml-1">(${product.reviews})</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg font-bold text-green-600">
+                                ${formatCurrency(product.price)}
+                            </span>
+                            <span class="text-sm text-gray-500 line-through">
+                                ${formatCurrency(product.originalPrice)}
+                            </span>
+                        </div>
+                        ${product.discount > 0 ? `
+                            <span class="inline-block bg-red-100 text-red-600 text-xs px-2 py-1 rounded mt-2">
+                                ${product.discount}% OFF
+                            </span>
+                        ` : ''}
+                        <button onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})" class="w-full mt-3 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                `;
+                
+                container.appendChild(productDiv);
+            });
+            
+            // Re-initialize icons in the new elements
+            lucide.createIcons();
+        }
+
+        // Render featured products
+        function renderFeaturedProducts() {
+            const container = document.getElementById('featuredProducts');
+            container.innerHTML = '';
+            
+            const featured = allProducts.slice(0, 12);
+            featured.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow';
+                
+                productDiv.innerHTML = `
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-4">
+                        <h4 class="font-semibold text-sm mb-2 line-clamp-2">${product.name}</h4>
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-yellow-400">
+                                ${[...Array(5)].map((_, i) => `
+                                    <i data-lucide="star" class="h-4 w-4 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-gray-300'}"></i>
+                                `).join('')}
+                            </div>
+                            <span class="text-xs text-gray-600 ml-1">(${product.reviews})</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg font-bold text-green-600">
+                                ${formatCurrency(product.price)}
+                            </span>
+                            <span class="text-sm text-gray-500 line-through">
+                                ${formatCurrency(product.originalPrice)}
+                            </span>
+                        </div>
+                        ${product.discount > 0 ? `
+                            <span class="inline-block bg-red-100 text-red-600 text-xs px-2 py-1 rounded mt-2">
+                                ${product.discount}% OFF
+                            </span>
+                        ` : ''}
+                        <button onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})" class="w-full mt-3 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                `;
+                
+                container.appendChild(productDiv);
+            });
+            
+            // Re-initialize icons in the new elements
+            lucide.createIcons();
+        }
+
+        // Render categories
+        function renderCategories() {
+            // Desktop navigation
+            const desktopNav = document.getElementById('desktopNav');
+            desktopNav.innerHTML = '';
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                button.className = `capitalize px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    selectedCategory === category
+                        ? 'bg-green-100 text-green-700'
+                        : 'text-gray-700 hover:text-green-600'
+                }`;
+                button.onclick = () => {
+                    selectedCategory = category;
+                    updateCategoryButtons();
+                    renderProducts(filterProducts());
+                };
+                desktopNav.appendChild(button);
+            });
+            
+            // Mobile menu
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileNav = document.createElement('div');
+            mobileNav.className = 'px-2 pt-2 pb-3 space-y-1';
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                button.className = `capitalize block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
+                    selectedCategory === category
+                        ? 'bg-green-100 text-green-700'
+                        : 'text-gray-700 hover:text-green-600'
+                }`;
+                button.onclick = () => {
+                    selectedCategory = category;
+                    updateCategoryButtons();
+                    renderProducts(filterProducts());
+                    mobileMenu.classList.add('hidden');
+                };
+                mobileNav.appendChild(button);
+            });
+            
+            // Clear and re-add mobile menu content
+            const existingNav = mobileMenu.querySelector('div');
+            if (existingNav) {
+                existingNav.remove();
+            }
+            mobileMenu.appendChild(mobileNav);
+            
+            // Category filter buttons
+            const categoryFilter = document.getElementById('categoryFilter');
+            categoryFilter.innerHTML = '';
+            categories.forEach(category => {
+                const button = document.createElement('button');
+                button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                button.className = `capitalize px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedCategory === category
+                        ? 'bg-green-600 text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`;
+                button.onclick = () => {
+                    selectedCategory = category;
+                    updateCategoryButtons();
+                    renderProducts(filterProducts());
+                };
+                categoryFilter.appendChild(button);
+            });
+        }
+
+        // Update category buttons
+        function updateCategoryButtons() {
+            // Update desktop nav
+            const desktopButtons = document.querySelectorAll('#desktopNav button');
+            desktopButtons.forEach((button, index) => {
+                button.className = `capitalize px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    selectedCategory === categories[index]
+                        ? 'bg-green-100 text-green-700'
+                        : 'text-gray-700 hover:text-green-600'
+                }`;
+            });
+            
+            // Update mobile menu
+            const mobileButtons = document.querySelectorAll('#mobileMenu button');
+            mobileButtons.forEach((button, index) => {
+                button.className = `capitalize block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
+                    selectedCategory === categories[index]
+                        ? 'bg-green-100 text-green-700'
+                        : 'text-gray-700 hover:text-green-600'
+                }`;
+            });
+            
+            // Update category filter
+            const filterButtons = document.querySelectorAll('#categoryFilter button');
+            filterButtons.forEach((button, index) => {
+                button.className = `capitalize px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedCategory === categories[index]
+                        ? 'bg-green-600 text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`;
+            });
+        }
+
+        // Event Listeners
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            searchQuery = e.target.value;
+            renderProducts(filterProducts());
+        });
+
+        // Initialize the page
+        function init() {
+            renderFeaturedProducts();
+            renderCategories();
+            renderProducts(filterProducts());
+            updateCartDisplay();
+        }
+
+        // Initialize when page loads
+        window.onload = init;
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment Gateway - Bargainsshoppe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-2xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-green-600 mb-2">Secure Payment</h1>
+            <p class="text-gray-600">Complete your purchase safely and securely</p>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Order Summary</h2>
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                    <span>Subtotal:</span>
+                    <span>KSh 12,999.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Delivery:</span>
+                    <span>KSh 299.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Discount:</span>
+                    <span class="text-green-600">-KSh 1,500.00</span>
+                </div>
+                <hr class="my-2">
+                <div class="flex justify-between font-bold text-lg">
+                    <span>Total:</span>
+                    <span>KSh 11,798.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Choose Payment Method</h2>
+            
+            <!-- Payment Method Selection -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button type="button" class="payment-method-btn flex items-center justify-center p-4 border-2 border-green-500 rounded-lg bg-green-50">
+                    <i data-lucide="smartphone" class="h-6 w-6 text-green-600 mr-2"></i>
+                    <span class="font-medium text-green-700">M-Pesa</span>
+                </button>
+                <button type="button" class="payment-method-btn flex items-center justify-center p-4 border border-gray-300 rounded-lg hover:border-green-500">
+                    <i data-lucide="credit-card" class="h-6 w-6 text-gray-600 mr-2"></i>
+                    <span class="font-medium text-gray-700">Card</span>
+                </button>
+            </div>
+
+            <!-- M-Pesa Payment Form -->
+            <div id="mpesaForm" class="payment-form">
+                <div class="mb-4">
+                    <label for="mpesaPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" id="mpesaPhone" name="mpesaPhone" 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                           placeholder="+254 700 000 000">
+                </div>
+                <div class="mb-4">
+                    <label for="mpesaAmount" class="block text-sm font-medium text-gray-700 mb-1">Amount</label>
+                    <input type="text" id="mpesaAmount" name="mpesaAmount" 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                           value="KSh 11,798.00" readonly>
+                </div>
+                <button type="button" id="initiateMpesa" 
+                        class="w-full bg-green-600 text-white py-3 px-4 rounded-md hover:bg-green-700 transition-colors">
+                    Initiate M-Pesa Payment
+                </button>
+            </div>
+
+            <!-- Card Payment Form -->
+            <div id="cardForm" class="payment-form hidden">
+                <div class="mb-4">
+                    <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                           placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="expiryDate" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                        <input type="text" id="expiryDate" name="expiryDate" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="MM/YY">
+                    </div>
+                    <div>
+                        <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                        <input type="text" id="cvv" name="cvv" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="123">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="cardName" class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                    <input type="text" id="cardName" name="cardName" 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                           placeholder="John Doe">
+                </div>
+                <button type="button" id="processCard" 
+                        class="w-full bg-green-600 text-white py-3 px-4 rounded-md hover:bg-green-700 transition-colors">
+                    Process Card Payment
+                </button>
+            </div>
+        </div>
+
+        <!-- Security Information -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-start">
+                <i data-lucide="shield-check" class="h-6 w-6 text-green-600 mt-0.5 mr-3"></i>
+                <div>
+                    <h3 class="font-medium text-gray-800">Secure Payment Guarantee</h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Your payment information is encrypted and securely processed. We use industry-standard 
+                        security measures to protect your financial data.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-start mt-3">
+                <i data-lucide="lock" class="h-6 w-6 text-green-600 mt-0.5 mr-3"></i>
+                <div>
+                    <h3 class="font-medium text-gray-800">256-bit SSL Encryption</h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        All transactions are protected with advanced encryption technology ensuring your 
+                        personal and financial information remains confidential.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Payment method selection
+        const paymentMethodBtns = document.querySelectorAll('.payment-method-btn');
+        const mpesaForm = document.getElementById('mpesaForm');
+        const cardForm = document.getElementById('cardForm');
+
+        paymentMethodBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active state from all buttons
+                paymentMethodBtns.forEach(b => {
+                    b.classList.remove('border-green-500', 'bg-green-50');
+                    b.classList.add('border-gray-300');
+                });
+                
+                // Add active state to clicked button
+                this.classList.add('border-green-500', 'bg-green-50');
+                this.classList.remove('border-gray-300');
+                
+                // Show/hide forms based on selection
+                if (this.textContent.includes('M-Pesa')) {
+                    mpesaForm.classList.remove('hidden');
+                    cardForm.classList.add('hidden');
+                } else {
+                    cardForm.classList.remove('hidden');
+                    mpesaForm.classList.add('hidden');
+                }
+            });
+        });
+
+        // M-Pesa payment initiation
+        document.getElementById('initiateMpesa').addEventListener('click', function() {
+            const phone = document.getElementById('mpesaPhone').value.trim();
+            if (phone && phone.length >= 10) {
+                // In a real application, this would initiate the M-Pesa STK push
+                alert(`M-Pesa payment initiated to ${phone} for KSh 11,798.00.\n\nPlease confirm the payment on your phone.`);
+                // Show payment processing modal or redirect to payment processor
+            } else {
+                alert('Please enter a valid phone number.');
+            }
+        });
+
+        // Card payment processing
+        document.getElementById('processCard').addEventListener('click', function() {
+            const cardNumber = document.getElementById('cardNumber').value.trim();
+            const expiryDate = document.getElementById('expiryDate').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+            const cardName = document.getElementById('cardName').value.trim();
+            
+            if (cardNumber && expiryDate && cvv && cardName) {
+                if (cardNumber.replace(/\s/g, '').length === 16 && !isNaN(cardNumber.replace(/\s/g, ''))) {
+                    if (cvv.length === 3 && !isNaN(cvv)) {
+                        // In a real application, this would process the card payment
+                        alert('Card payment processing initiated. Please wait...');
+                        // Show payment processing modal or redirect to payment processor
+                    } else {
+                        alert('Please enter a valid CVV (3 digits).');
+                    }
+                } else {
+                    alert('Please enter a valid 16-digit card number.');
+                }
+            } else {
+                alert('Please fill in all card details.');
+            }
+        });
+
+        // Initialize with M-Pesa selected
+        document.querySelector('.payment-method-btn:first-child').click();
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Support - Bargainsshoppe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-green-600 mb-2">Payment Support</h1>
+            <p class="text-gray-600">Need help with a payment issue? We're here to assist you</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Payment Support Form -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Report Payment Issue</h2>
+                <form id="paymentForm">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="orderNumber" class="block text-sm font-medium text-gray-700 mb-1">Order Number (if applicable)</label>
+                        <input type="text" id="orderNumber" name="orderNumber" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="e.g., BS-2025-001234">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="paymentMethod" class="block text-sm font-medium text-gray-700 mb-1">Payment Method Used</label>
+                        <select id="paymentMethod" name="paymentMethod" required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Select payment method</option>
+                            <option value="mpesa">M-Pesa</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="bank">Bank Transfer</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="paybill">PayBill</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="issueType" class="block text-sm font-medium text-gray-700 mb-1">Issue Type</label>
+                        <select id="issueType" name="issueType" required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Select issue type</option>
+                            <option value="failed">Payment Failed</option>
+                            <option value="pending">Payment Pending</option>
+                            <option value="charged">Charged but not processed</option>
+                            <option value="refund">Request Refund</option>
+                            <option value="wrong">Wrong amount charged</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="amount" class="block text-sm font-medium text-gray-700 mb-1">Amount (KES)</label>
+                        <input type="number" id="amount" name="amount" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="Enter amount in KES">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="transactionId" class="block text-sm font-medium text-gray-700 mb-1">Transaction ID/Reference</label>
+                        <input type="text" id="transactionId" name="transactionId" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="Enter transaction ID or reference number">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Describe the Issue</label>
+                        <textarea id="description" name="description" rows="4" required 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                                  placeholder="Please describe the payment issue you're experiencing..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors">
+                        Submit Payment Issue
+                    </button>
+                </form>
+            </div>
+
+            <!-- Payment Support Information -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Payment Support</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i data-lucide="credit-card" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Accepted Payment Methods</h3>
+                            <ul class="text-gray-600 text-sm mt-1 space-y-1">
+                                <li>• M-Pesa (PayBill: 123456)</li>
+                                <li>• Credit/Debit Cards (Visa, MasterCard)</li>
+                                <li>• Bank Transfers</li>
+                                <li>• PayPal</li>
+                                <li>• Mobile Money</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i data-lucide="shield-check" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Secure Payments</h3>
+                            <p class="text-gray-600 text-sm mt-1">
+                                All transactions are secured with 256-bit SSL encryption. Your payment information is never stored on our servers.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i data-lucide="info" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Common Payment Issues</h3>
+                            <ul class="text-gray-600 text-sm mt-1 space-y-1">
+                                <li>• Insufficient funds</li>
+                                <li>• Network timeout errors</li>
+                                <li>• Incorrect PIN/Password</li>
+                                <li>• Expired cards</li>
+                                <li>• Transaction limits exceeded</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i data-lucide="clock" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Resolution Time</h3>
+                            <p class="text-gray-600 text-sm mt-1">
+                                Most payment issues are resolved within 24-48 hours. Complex issues may take up to 5 business days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Payment Support -->
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="font-medium text-gray-800 mb-3">Emergency Payment Support</h3>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>WhatsApp:</strong> +254 774 755356</p>
+                        <p><strong>Phone:</strong> +254 100 185501</p>
+                        <p class="text-xs text-gray-500 mt-2">
+                            For urgent payment issues, contact us immediately via WhatsApp or phone. 
+                            Include your transaction ID and order number for faster assistance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Payment Status Check -->
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="font-medium text-gray-800 mb-3">Check Payment Status</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Transaction ID</label>
+                            <input type="text" id="checkTransactionId" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                                   placeholder="Enter transaction ID">
+                        </div>
+                        <button id="checkStatusBtn" 
+                                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">
+                            Check Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Payment Support FAQ</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-medium text-gray-800">Why was my payment declined?</h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Common reasons include insufficient funds, expired card, incorrect details, or security restrictions. 
+                        Contact your bank or try another payment method.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-medium text-gray-800">How long does payment processing take?</h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        M-Pesa payments are usually instant. Card payments take 1-2 minutes. Bank transfers may take 1-2 business days.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-medium text-gray-800">Can I get a refund for payment issues?</h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Yes, if your payment failed but was charged, we'll process a refund within 5-7 business days after verification.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Form submission handler
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // In a real application, you would send this data to your server
+            console.log('Payment Support Form Data:', data);
+            
+            // Show success message
+            alert('Your payment issue has been reported! Our payment support team will contact you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Check status button handler
+        document.getElementById('checkStatusBtn').addEventListener('click', function() {
+            const transactionId = document.getElementById('checkTransactionId').value.trim();
+            if (transactionId) {
+                // In a real application, this would check the payment status
+                alert(`Checking status for transaction: ${transactionId}\n\nStatus: Processing (This would show real-time status in production)`);
+            } else {
+                alert('Please enter a transaction ID to check status.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - Bargainsshoppe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-green-600 mb-2">Contact Support</h1>
+            <p class="text-gray-600">We're here to help you with any questions or issues</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Contact Form -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Send us a message</h2>
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <select id="subject" name="subject" required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Select a subject</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="delivery">Delivery Issue</option>
+                            <option value="return">Return/Refund</option>
+                            <option value="product">Product Question</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Contact Information</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i data-lucide="phone" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Phone Support</h3>
+                            <p class="text-gray-600">+254 100 185501</p>
+                            <p class="text-gray-600">Nairobi: +254 20 2307007</p>
+                            <p class="text-gray-600">Mombasa: +254 518 009090</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i data-lucide="message-circle" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">WhatsApp Support</h3>
+                            <p class="text-gray-600">+254 774 755356</p>
+                            <p class="text-gray-600">+254 785 151815</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i data-lucide="mail" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Email Support</h3>
+                            <p class="text-gray-600">support@bargainsshoppe.co.ke</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i data-lucide="clock" class="h-5 w-5 text-green-600 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Support Hours</h3>
+                            <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p class="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+                            <p class="text-gray-600">Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h3 class="font-medium text-gray-800 mb-3">Quick Help</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-green-600">FAQs</a></li>
+                        <li><a href="#" class="hover:text-green-600">Return Policy</a></li>
+                        <li><a href="#" class="hover:text-green-600">Shipping Information</a></li>
+                        <li><a href="#" class="hover:text-green-600">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-green-600">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to your server
+            console.log({
+                name,
+                email,
+                phone,
+                subject,
+                message
+            });
+            
+            // Show success message
+            alert('Thank you for your message! Our support team will contact you shortly.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
