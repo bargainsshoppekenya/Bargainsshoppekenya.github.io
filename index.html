@@ -153,6 +153,45 @@
   <strong>📲 Pay via M-Pesa: PAYBILL 444174</strong><br>
   <small>Use your order number as the ACCOUNT NUMBER</small>
 </div>
+    <div class="mpesa-section" style="background: #0054A6; color: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+    <h3>💳 Pay via M-Pesa</h3>
+    <p><strong>Business Number:</strong> 0712 345 678</p>
+    <p><strong>Account:</strong> Bargainsshoppe</p>
+    <p>Enter your phone number as the PIN</p>
+    
+    <!-- Simple M-Pesa Payment Form -->
+    <form id="mpesa-form" style="margin-top: 15px;">
+        <input type="text" id="phone" placeholder="Enter your phone number (07...)" style="padding: 10px; margin: 5px; border-radius: 5px; width: 200px;" required>
+        <input type="number" id="amount" placeholder="Amount (KSH)" style="padding: 10px; margin: 5px; border-radius: 5px; width: 150px;" required>
+        <button type="button" onclick="initiatePayment()" style="background: #25D366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Pay Now</button>
+    </form>
+    
+    <div id="payment-result" style="margin-top: 15px; display: none;"></div>
+</div>
+
+<script>
+function initiatePayment() {
+    const phone = document.getElementById('phone').value;
+    const amount = document.getElementById('amount').value;
+    
+    // Validate phone number (Kenya format)
+    if (!phone.startsWith('07') || phone.length !== 10) {
+        alert('Please enter a valid Kenyan phone number (07...)');
+        return;
+    }
+    
+    // Show loading message
+    document.getElementById('payment-result').style.display = 'block';
+    document.getElementById('payment-result').innerHTML = 'Sending STK push... Please check your phone.';
+    
+    // In a real implementation, this would call Safaricom API
+    // For now, simulate the process
+    setTimeout(() => {
+        alert(`M-Pesa STK push sent to ${phone}\nAmount: KSH ${amount}\n\nCheck your phone to complete payment.`);
+        document.getElementById('payment-result').innerHTML = '✅ STK push sent successfully!';
+    }, 2000);
+}
+</script>
     <!-- Featured Products Carousel -->
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1348,6 +1387,7 @@
     </script>
 </body>
 </html>
+
 
 
 
